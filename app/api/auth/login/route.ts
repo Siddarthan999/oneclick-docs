@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "GitHub client ID not configured" }, { status: 500 })
   }
 
-  const redirectUri = `http://localhost:3000/api/auth/callback`
+  const redirectUri = `https://oneclick-docs.vercel.app/api/auth/callback`
   const scope = "repo,read:user,user:email"
 
   const url = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(
